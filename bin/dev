@@ -12,7 +12,7 @@ init() {
     DEV_COMMANDPATH=${DEV_PATH}/dev_command;
 
     DEV_SUDO='';
-    if [ -z "`groups | grep docker`" ]; then
+    if [ -z "`groups | grep docker\|staff`" ]; then
         DEV_SUDO='sudo -E';
     fi
 
