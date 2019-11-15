@@ -25,7 +25,7 @@ services:
     
   php56:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php5-fpm
     volumes:
@@ -37,7 +37,7 @@ services:
     network_mode: bridge
   php70:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php7-fpm
     volumes:
@@ -49,7 +49,7 @@ services:
     network_mode: bridge
   php71:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php71-fpm
     volumes:
@@ -61,7 +61,7 @@ services:
     network_mode: bridge
   php72:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php72-fpm
     volumes:
@@ -73,7 +73,7 @@ services:
     network_mode: bridge
   php73:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php73-fpm
     volumes:
@@ -85,7 +85,7 @@ services:
     network_mode: bridge
   php74:
     build:
-      context: build/dist/php
+      context: build/custom/php
       args: 
         - FROM_TAG=php74-fpm
     volumes:
@@ -117,11 +117,12 @@ services:
       - php73:fpm73
       - php74:fpm74
     network_mode: bridge
+    ports:
+        - "80:80"
   ssl:
     build:
       context: build/dist/ssl
     ports:
-        - "80:80"
-        - "443:443"
+      - "443:443"
     network_mode: bridge
 
