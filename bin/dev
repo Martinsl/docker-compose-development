@@ -98,7 +98,8 @@ dc() {
     }
 
     user() {
-        opt "-u `id -u`:`id -g`";
+        #opt "-u `id -u`:`id -g`";
+        opt "-u 1000:1000";
     }
 
     projectpath() {

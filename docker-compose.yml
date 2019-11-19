@@ -29,7 +29,7 @@ services:
       args: 
         - FROM_TAG=php5-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+        - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -41,7 +41,7 @@ services:
       args: 
         - FROM_TAG=php7-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+        - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -53,7 +53,7 @@ services:
       args: 
         - FROM_TAG=php71-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+        - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -65,7 +65,7 @@ services:
       args: 
         - FROM_TAG=php72-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+        - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -77,7 +77,7 @@ services:
       args: 
         - FROM_TAG=php73-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+        - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -89,7 +89,7 @@ services:
       args: 
         - FROM_TAG=php74-fpm
     volumes:
-      - dockerdev-workspace-volume:/data
+            - dockerdev-workspace-volume:/data:nocopy
     links:
       - db
       - mailcatch
@@ -104,7 +104,7 @@ services:
     build:
       context: build/dist/web
     volumes:
-        - dockerdev-workspace-volume:/data:ro
+       - dockerdev-workspace-volume:/data:ro,nocopy
     environment:
       - DOMAINSUFFIX
     links:

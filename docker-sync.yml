@@ -6,4 +6,4 @@ syncs:
     sync_userid: '1000'
     sync_strategy: 'unison'
     src: 'workspace/'
-    sync_excludes: ['Name .git', 'Name .idea']
+    sync_excludes: ['Name .git', 'Name .idea', 'Name .cache']
